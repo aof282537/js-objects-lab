@@ -3,7 +3,7 @@ const game = {
   biggestNum: 100,
   smallestNum: 1,
   secretNum: null,
-  PrevGuesses: [],
+  prevGuesses: [],
 
   
   play: function() {
@@ -16,6 +16,21 @@ const game = {
         if (typeof play === 'number'){
           console.log(typeof play)
         }
+        while (isNaN(play) || play < this.smallestNum || play > this.biggestNum)
+        return play;
+  },
+
+  
+  render: function() {
+    let message; 
+    if (this.prevGuesses[this.prevGuesses.length-1] === this.secretNum) {
+      message = `Congrats! You guessed the number in ${this.prevGuesses.length}!`
+    } else if (this.prevGuesses[this.prevGuesses.length-1] > this.secretNum) {
+      message = `Your guess is too high ${this.prevGuesses.join(',')}!`
+    } else if (this.prevGuesses[this.prevGuesses.length-1] < this.secretNum) {
+      message = `You guess is to low ${this.prevGuesses.join(',')}!`
+    }
+    alert(message)
   } 
 }
 // console.log(game)
