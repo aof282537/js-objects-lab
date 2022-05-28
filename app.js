@@ -21,9 +21,6 @@ const game = {
 
   getGuess: function () {
     let play
-    // if (typeof play === 'number') {
-    //   console.log(typeof play)
-    // }
     do {
       play = parseInt(prompt(`Enter a guess between ${this.smallestNum} and ${this.biggestNum}`))
       console.log(play)
@@ -35,7 +32,7 @@ const game = {
     let message;
     console.log("Rendering")
     if (this.prevGuesses[this.prevGuesses.length - 1] === this.secretNum) {
-      message = `Congrats! You guessed the number in ${this.prevGuesses.length} tries!!`
+      message = `Congrats! You guessed the number in ${this.prevGuesses.length} tries!` //tries!! how many are in there
     } else if (this.prevGuesses[this.prevGuesses.length - 1] > this.secretNum) {
       message = `Your guess is too high ${this.prevGuesses.join(',')}!`
     } else if (this.prevGuesses[this.prevGuesses.length - 1] < this.secretNum) {
@@ -44,7 +41,4 @@ const game = {
     alert(message)
   }
 }
-// console.log(game)
-// console.log(game.prevGuesses) 
-// game.getGuess() 
 game.play()
