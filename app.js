@@ -36,7 +36,7 @@ const game = {
     } else if (this.prevGuesses[this.prevGuesses.length - 1] > this.secretNum) {
       message = `Your guess is too high ${this.prevGuesses.join(',')}!`
     } else if (this.prevGuesses[this.prevGuesses.length - 1] < this.secretNum) {
-      message = `You guess is to low ${this.prevGuesses.join(',')}!`
+      message = `You guess is too low ${this.prevGuesses.join(',')}!`
     }
     alert(message)
   }
